@@ -1,1 +1,1 @@
-<template>a</template>
+<template>Coach Register</template>
