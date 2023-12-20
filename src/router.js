@@ -13,6 +13,7 @@ const routes = [
   {
     path: '/coaches/:id',
     component: CoachDetail,
+    props: true, //:id động sẽ được truyền qua props id khi page mounted
     children: [
       {
         path: 'contact',

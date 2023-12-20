@@ -1,8 +1,11 @@
 export default {
-  coaches(state) {
+  coaches: (state) => {
     return state.coaches;
   },
-  hasCoaches(state) {
+  getCoachById: (state) => (id) => {
+    return state.coaches.find((coach) => coach.id === id);
+  },
+  hasCoaches: (state) => {
     return state.coaches && state.coaches.length > 0;
   },
 };
