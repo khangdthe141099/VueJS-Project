@@ -1,1 +1,6 @@
-export default {}
+//Mutation chỉ thực hiện nhiệm vụ thao tác với state trong store
+export default {
+  registerCoach(state, payload) {
+    state.coaches.push(payload);
+  },
+};

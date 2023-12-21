@@ -4,7 +4,9 @@ import TheHeader from './components/layout/TheHeader.vue'
 
 <template>
     <TheHeader />
-    <router-view></router-view>
+    <div class="container">
+        <router-view></router-view>
+    </div>
 </template>
 
 <style>
@@ -20,5 +22,9 @@ html {
 
 body {
     margin: 0;
+}
+
+.container {
+    padding: 0 80px;
 }
 </style>

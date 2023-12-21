@@ -1,44 +1,39 @@
-<template>
-  <base-card>
-    <h2>Find Your Coach</h2>
-    <span class="filter-option">
-      <input type="checkbox" id="frontend" checked @change="setFilter" />
-      <label for="frontend">Frontend</label>
-    </span>
-    <span class="filter-option">
-      <input type="checkbox" id="backend" checked @change="setFilter" />
-      <label for="backend">Backend</label>
-    </span>
-    <span class="filter-option">
-      <input type="checkbox" id="career" checked @change="setFilter" />
-      <label for="career">Career</label>
-    </span>
-  </base-card>
-</template>
-  
 <script setup>
-import { ref, defineEmits } from 'vue'
+import { defineEmits, defineProps } from 'vue'
 const emit = defineEmits(['changeFilter'])
-const filters = ref({
-  frontend: true,
-  backend: true,
-  career: true
-})
+const props = defineProps(['activeFilters'])
 
 const setFilter = (event) => {
   const inputId = event.target.id;
   const isActive = event.target.checked;
   const updatedFilters = {
-    ...filters.value,
+    ...props.activeFilters,
     [inputId]: isActive
   };
 
-  filters.value = updatedFilters
   emit('changeFilter', updatedFilters)
 }
 
 
 </script>
+
+<template>
+  <base-card>
+    <h2>Find Your Coach</h2>
+    <span class="filter-option">
+      <input type="checkbox" id="frontend" :checked="props.activeFilters.frontend" @change="setFilter" />
+      <label for="frontend">Frontend</label>
+    </span>
+    <span class="filter-option">
+      <input type="checkbox" id="backend" :checked="props.activeFilters.backend" @change="setFilter" />
+      <label for="backend">Backend</label>
+    </span>
+    <span class="filter-option">
+      <input type="checkbox" id="career" :checked="props.activeFilters.career" @change="setFilter" />
+      <label for="career">Career</label>
+    </span>
+  </base-card>
+</template>
   
 <style scoped>
 h2 {
