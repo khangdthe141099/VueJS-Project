@@ -29,7 +29,7 @@ const setFilter = (event) => {
   const inputId = event.target.id;
   const isActive = event.target.checked;
   const updatedFilters = {
-    ...this.filters,
+    ...filters.value,
     [inputId]: isActive
   };
 
