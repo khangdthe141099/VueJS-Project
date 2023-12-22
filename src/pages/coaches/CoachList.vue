@@ -34,6 +34,7 @@ const filteredCoaches = computed(() => {
     })
 }) //List coach
 const hasCoaches = computed(() => store.getters['coaches/hasCoaches']) //Has coach condition
+const isCoach = computed(() => store.getters['coaches/isCoach'])
 
 //[METHOD]:
 const setFilters = (updatedFilter) => {
