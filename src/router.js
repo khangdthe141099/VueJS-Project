@@ -18,6 +18,7 @@ const routes = [
       {
         path: 'contact',
         component: ContactCoach,
+        props: true,
       },
     ],
   },

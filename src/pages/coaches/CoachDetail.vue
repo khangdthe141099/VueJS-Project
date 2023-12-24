@@ -17,8 +17,6 @@ onBeforeMount(() => {
     selectedCoach.value = getCoachById(props?.id)
 })
 
-console.log('selectedCoach', selectedCoach);
-
 const fullName = computed(() => {
     return selectedCoach?.value?.firstName + ' ' + selectedCoach?.value?.lastName
 })
@@ -36,7 +34,7 @@ const description = computed(() => {
 })
 
 const coachContactLink = computed(() => {
-    return route.path + '/' + props.id + '/contact'
+    return route.path + '/contact'
 })
 
 

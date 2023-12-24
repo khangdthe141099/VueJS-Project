@@ -73,8 +73,6 @@ export default {
                 areas: this.areas.val,
             }
 
-            console.log('formData', formData);
-
             //Pass data to parent component
             this.$emit('save-data', formData)
         }
