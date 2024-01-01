@@ -5,7 +5,7 @@ export default {
     const userId = context.rootGetters.userId;
 
     const coachData = {
-      id: userId + Math.random(),
+      id: userId,
       firstName: data.first,
       lastName: data.last,
       areas: data.areas,

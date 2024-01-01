@@ -34,7 +34,7 @@ export default {
                 coachId: this.id
             })
 
-            this.$router.replace('/request')
+            this.$router.replace('/coaches')
         }
     }
 }
